@@ -4,6 +4,6 @@ lib/*
 lib64/*
 json/config.json
 test/*
-.kitabot/
+.kitabot/*
 src/__pycache__/*
 src/modules/__pycache__/*
