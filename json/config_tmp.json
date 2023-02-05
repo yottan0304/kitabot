@@ -1,0 +1,10 @@
+{
+    "TOKEN": "", 
+    "REGION_NAME": "",
+    "AWS_ACCESS_KEY_ID": "",
+    "AWA_SECRET_ACCESS_KEY": "",
+    "AMAZON_LOGIN_ID":"",
+    "AMAZON_LOGIN_PASSWORD":"",
+    "NOTION_API_KEY":"",
+    "NOTION_DATABASE_ID":""
+}

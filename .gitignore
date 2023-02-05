@@ -2,5 +2,8 @@ bin/*
 include/*
 lib/*
 lib64/*
-json/*
+json/config.json
 test/*
+.kitabot/
+src/__pycache__/*
+src/modules/__pycache__/*
