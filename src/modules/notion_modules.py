@@ -57,7 +57,6 @@ def create_page(notion, data_base_id, title, kinds):
 
 #ADD block(h2)
 def add_h2(notion, page_id, text):
-    print("gogo")
     notion.blocks.children.append(
     "6973673eda4a431a9464c5614c6490d6",
     children=[{
@@ -77,7 +76,6 @@ def add_h2(notion, page_id, text):
 
 #ADD block(callout)
 def add_callout(notion, page_id, text, emoji):
-    print("gogo")
     notion.blocks.children.append(
         page_id,
         children=[{
@@ -99,7 +97,6 @@ def add_callout(notion, page_id, text, emoji):
 )
 
 def add_h2(notion, page_id, text):
-    print("gogo")
     notion.blocks.children.append(
         page_id,
         children=[{
@@ -118,7 +115,6 @@ def add_h2(notion, page_id, text):
 )
 
 def add_bookmark(notion, page_id, url):
-    print("gogo")
     notion.blocks.children.append(
         page_id,
         children=[{

@@ -1,22 +1,22 @@
+from pprint import pprint
 import discord
 import os
 import json
 import boto3
-import selenium_serach
-import re
+import movie_info_scraping
 import notion
-from pprint import pprint
+import re
 
-# BASEディレクトリ指定
+# Select os directory
 os.chdir(os.path.join(os.path.dirname(__file__), "../"))
 CONFIG_PATH = 'json/config.json'
 
-# Discordインスタンス作成
+# Make intents
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
 
-# Bot起動時の出力
+# Start Bot
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
@@ -26,26 +26,22 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    #Record Notion
+    # Record Notion
     if "487572866267873290" == str(message.author.id):
 
         if re.match(r'[https://amzn.asia]+', message.content):
 
-            #Get movie name
-            movie_name = selenium_serach.get_name(message.content, GetConf.get_amazon_login_id(), GetConf.get_amazon_login_password())
+            # Get movie name
+            movie_name = movie_info_scraping.get_name(message.content, GetConf.get_amazon_login_id(), GetConf.get_amazon_login_password())
             await message.channel.send(""f'{movie_name}を見るんですね！')
-            pprint("movie name OK")
 
-            #Check Notion's database
+            # Check Notion's database
             if "Match" != notion.check_record(GetConf.get_notion_api_key(), GetConf.get_notion_database_id(), movie_name):
                 
-                #Get info
-                pprint("check OK")
-                info = selenium_serach.get_info(movie_name)
+                # Get info
+                info = movie_info_scraping.get_info(movie_name)
                 
-
-                #Send on Notion
-                pprint("befor send to notion")
+                # Send on Notion
                 notion.create_record(GetConf.get_notion_api_key(), GetConf.get_notion_database_id(), info)
                 await message.channel.send("Notion映画情報記録しました！観たら感想をぜひ書いてください！")
 
@@ -53,7 +49,7 @@ async def on_message(message):
                 await message.channel.send("何度か見ている作品ですね")
 
 
-# JSONファイルからトークン情報を得る
+# Get config
 class GetConf:
     @classmethod
     def get_token(cls): 
@@ -97,13 +93,5 @@ class GetConf:
             notion_database_id = json.load(f).get('NOTION_DATABASE_ID')
         return notion_database_id
 
-#Lexインスタンス作成
-# lex_client = boto3.client(
-#     'lexv2-runtime',
-#     region_name = GetConf.get_region_name(),
-#     aws_access_key_id = GetConf.get_aws_access_key_id(),
-#     aws_secret_access_key = GetConf.get_aws_secret_access_key()
-# )
-
-#Discord bot作成
+# Make Discord instans
 client.run(token = GetConf.get_token())
