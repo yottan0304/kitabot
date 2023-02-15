@@ -1,0 +1,618 @@
+[2023-02-11 06:06:16] [INFO    ] discord.client: logging in using static token
+[2023-02-11 06:06:17] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 36fb3db61a648b741f152e9c398f3b04).
+[2023-02-11 06:07:49] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 96, in <module>
+    client.run(token = GetConf.get_token())
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 828, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 44, in on_message
+    notion.create_record(GetConf.get_notion_api_key(), GetConf.get_notion_database_id(), info)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/notion.py", line 29, in create_record
+    module.create_page(notion, data_base_id, info[0], "映画")
+  File "/home/yoshiaki/workspace/discord/kitabot/src/modules/notion_modules.py", line 26, in create_page
+    notion.pages.create(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/notion_client/api_endpoints.py", line 199, in create
+    return self.parent.request(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/notion_client/client.py", line 191, in request
+    response = self.client.send(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 191, in _receive_event
+    data = self._network_stream.read(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/backends/sync.py", line 28, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.10/ssl.py", line 1259, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.10/ssl.py", line 1132, in read
+    return self._sslobj.read(len)
+
+[2023-02-11 06:07:57] [ERROR   ] discord.client: Attempting a reconnect in 0.01s
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 627, in connect
+    await self.ws.poll_event()
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/gateway.py", line 646, in poll_event
+    raise ConnectionClosed(self.socket, shard_id=self.shard_id, code=code) from None
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
+[2023-02-11 06:07:57] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 06:25:06] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 08:24:09] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 10:03:18] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 11:02:07] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 34, in on_message
+    movie_name = movie_info_scraping.get_name(message.content, GetConf.get_amazon_login_id(), GetConf.get_amazon_login_password())
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 33, in get_name
+    origin_text = driver.find_element(By.CLASS_NAME, "_36RzrH").text
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 830, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 440, in execute
+    self.error_handler.check_response(response)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 245, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"._36RzrH"}
+  (Session info: headless chrome=109.0.5414.119)
+Stacktrace:
+#0 0x55aaae3a9323 <unknown>
+#1 0x55aaae16f707 <unknown>
+#2 0x55aaae1ac032 <unknown>
+#3 0x55aaae1ac141 <unknown>
+#4 0x55aaae1e6514 <unknown>
+#5 0x55aaae1cc40d <unknown>
+#6 0x55aaae1e426c <unknown>
+#7 0x55aaae1cc1b3 <unknown>
+#8 0x55aaae19f4de <unknown>
+#9 0x55aaae1a05fe <unknown>
+#10 0x55aaae3fae7e <unknown>
+#11 0x55aaae3fdabe <unknown>
+#12 0x55aaae3fe2fa <unknown>
+#13 0x55aaae3e0e60 <unknown>
+#14 0x55aaae3feae3 <unknown>
+#15 0x55aaae3d2b05 <unknown>
+#16 0x55aaae41f9d8 <unknown>
+#17 0x55aaae41fb66 <unknown>
+#18 0x55aaae43afb3 <unknown>
+#19 0x7f7fb2305b43 <unknown>
+
+[2023-02-11 11:06:16] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 11:19:29] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 96, in <module>
+    client.run(token = GetConf.get_token())
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 828, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 41, in on_message
+    info = movie_info_scraping.get_info(movie_name)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 71, in get_info
+    result = search_title("https://filmarks.com/search/" + genre + "?q=" + title,driver,title)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 52, in search_title
+    titles[index].click()
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 93, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 403, in _execute
+    return self._parent.execute(command, params)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 438, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/remote_connection.py", line 290, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/remote_connection.py", line 311, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+
+[2023-02-11 11:19:39] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 96, in <module>
+    client.run(token = GetConf.get_token())
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 828, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 44, in on_message
+    notion.create_record(GetConf.get_notion_api_key(), GetConf.get_notion_database_id(), info)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/notion.py", line 39, in create_record
+    module.add_h2(notion, page_id, "■Filmarks")
+  File "/home/yoshiaki/workspace/discord/kitabot/src/modules/notion_modules.py", line 100, in add_h2
+    notion.blocks.children.append(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/notion_client/api_endpoints.py", line 23, in append
+    return self.parent.request(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/notion_client/client.py", line 191, in request
+    response = self.client.send(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 191, in _receive_event
+    data = self._network_stream.read(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/backends/sync.py", line 28, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.10/ssl.py", line 1259, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.10/ssl.py", line 1132, in read
+    return self._sslobj.read(len)
+
+[2023-02-11 11:19:43] [ERROR   ] discord.client: Attempting a reconnect in 1.13s
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 627, in connect
+    await self.ws.poll_event()
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/gateway.py", line 646, in poll_event
+    raise ConnectionClosed(self.socket, shard_id=self.shard_id, code=code) from None
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
+[2023-02-11 11:19:44] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 12:31:24] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 96, in <module>
+    client.run(token = GetConf.get_token())
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 828, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 41, in on_message
+    info = movie_info_scraping.get_info(movie_name)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 71, in get_info
+    result = search_title("https://filmarks.com/search/" + genre + "?q=" + title,driver,title)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 52, in search_title
+    titles[index].click()
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 93, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 403, in _execute
+    return self._parent.execute(command, params)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 438, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/remote_connection.py", line 290, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/remote_connection.py", line 311, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+
+[2023-02-11 12:31:34] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 96, in <module>
+    client.run(token = GetConf.get_token())
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 828, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 44, in on_message
+    notion.create_record(GetConf.get_notion_api_key(), GetConf.get_notion_database_id(), info)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/notion.py", line 45, in create_record
+    module.add_callout(notion, page_id, info[3], "🎬")
+  File "/home/yoshiaki/workspace/discord/kitabot/src/modules/notion_modules.py", line 79, in add_callout
+    notion.blocks.children.append(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/notion_client/api_endpoints.py", line 23, in append
+    return self.parent.request(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/notion_client/client.py", line 191, in request
+    response = self.client.send(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 908, in send
+    response = self._send_handling_auth(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 936, in _send_handling_auth
+    response = self._send_handling_redirects(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 973, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_client.py", line 1009, in _send_single_request
+    response = transport.handle_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpx/_transports/default.py", line 218, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/connection_pool.py", line 237, in handle_request
+    response = connection.handle_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/connection.py", line 90, in handle_request
+    return self._connection.handle_request(request)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 91, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 155, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/_sync/http11.py", line 191, in _receive_event
+    data = self._network_stream.read(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/httpcore/backends/sync.py", line 28, in read
+    return self._sock.recv(max_bytes)
+  File "/usr/lib/python3.10/ssl.py", line 1259, in recv
+    return self.read(buflen)
+  File "/usr/lib/python3.10/ssl.py", line 1132, in read
+    return self._sslobj.read(len)
+
+[2023-02-11 12:31:35] [ERROR   ] discord.client: Attempting a reconnect in 1.07s
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 627, in connect
+    await self.ws.poll_event()
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/gateway.py", line 646, in poll_event
+    raise ConnectionClosed(self.socket, shard_id=self.shard_id, code=code) from None
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
+[2023-02-11 12:31:36] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 14:49:52] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 16:39:02] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 18:34:52] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 22:11:50] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 23:05:39] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-11 23:49:57] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-12 00:14:13] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-12 03:54:06] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-12 03:59:43] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 34, in on_message
+    movie_name = movie_info_scraping.get_name(message.content, GetConf.get_amazon_login_id(), GetConf.get_amazon_login_password())
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 33, in get_name
+    origin_text = driver.find_element(By.CLASS_NAME, "_36RzrH").text
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 830, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 440, in execute
+    self.error_handler.check_response(response)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 245, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"._36RzrH"}
+  (Session info: headless chrome=109.0.5414.119)
+Stacktrace:
+#0 0x55d71ec91323 <unknown>
+#1 0x55d71ea57707 <unknown>
+#2 0x55d71ea94032 <unknown>
+#3 0x55d71ea94141 <unknown>
+#4 0x55d71eace514 <unknown>
+#5 0x55d71eab440d <unknown>
+#6 0x55d71eacc26c <unknown>
+#7 0x55d71eab41b3 <unknown>
+#8 0x55d71ea874de <unknown>
+#9 0x55d71ea885fe <unknown>
+#10 0x55d71ece2e7e <unknown>
+#11 0x55d71ece5abe <unknown>
+#12 0x55d71ece62fa <unknown>
+#13 0x55d71ecc8e60 <unknown>
+#14 0x55d71ece6ae3 <unknown>
+#15 0x55d71ecbab05 <unknown>
+#16 0x55d71ed079d8 <unknown>
+#17 0x55d71ed07b66 <unknown>
+#18 0x55d71ed22fb3 <unknown>
+#19 0x7f97ed05ab43 <unknown>
+
+[2023-02-12 04:39:03] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-12 05:26:40] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-12 07:21:39] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 96, in <module>
+    client.run(token = GetConf.get_token())
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 828, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 41, in on_message
+    info = movie_info_scraping.get_info(movie_name)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 71, in get_info
+    result = search_title("https://filmarks.com/search/" + genre + "?q=" + title,driver,title)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 44, in search_title
+    driver.get(url)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 449, in get
+    self.execute(Command.GET, {"url": url})
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 438, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/remote_connection.py", line 290, in execute
+    return self._request(command_info[0], url, body=data)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/remote_connection.py", line 311, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/request.py", line 78, in request
+    return self.request_encode_body(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.10/http/client.py", line 1374, in getresponse
+    response.begin()
+  File "/usr/lib/python3.10/http/client.py", line 318, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.10/http/client.py", line 279, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+
+[2023-02-12 07:21:48] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 41, in on_message
+    info = movie_info_scraping.get_info(movie_name)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 71, in get_info
+    result = search_title("https://filmarks.com/search/" + genre + "?q=" + title,driver,title)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 52, in search_title
+    titles[index].click()
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 93, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webelement.py", line 403, in _execute
+    return self._parent.execute(command, params)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 440, in execute
+    self.error_handler.check_response(response)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 245, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <h3 class="p-content-cassette__title">...</h3> is not clickable at point (569, 572). Other element would receive the click: <iframe id="google_ads_iframe_/42019642/filmarks_pc_footer_overlay_0" name="google_ads_iframe_/42019642/filmarks_pc_footer_overlay_0" title="3rd party ad content" width="970" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" role="region" aria-label="Advertisement" tabindex="0" style="border: 0px; vertical-align: bottom;" data-load-complete="true" data-google-container-id="3"></iframe>
+  (Session info: headless chrome=109.0.5414.119)
+Stacktrace:
+#0 0x55e4d6313323 <unknown>
+#1 0x55e4d60d9707 <unknown>
+#2 0x55e4d611c8a9 <unknown>
+#3 0x55e4d611a8af <unknown>
+#4 0x55e4d611845e <unknown>
+#5 0x55e4d61175fd <unknown>
+#6 0x55e4d610b425 <unknown>
+#7 0x55e4d61363e2 <unknown>
+#8 0x55e4d610acaf <unknown>
+#9 0x55e4d61365ae <unknown>
+#10 0x55e4d614e26c <unknown>
+#11 0x55e4d61361b3 <unknown>
+#12 0x55e4d61094de <unknown>
+#13 0x55e4d610a5fe <unknown>
+#14 0x55e4d6364e7e <unknown>
+#15 0x55e4d6367abe <unknown>
+#16 0x55e4d63682fa <unknown>
+#17 0x55e4d634ae60 <unknown>
+#18 0x55e4d6368ae3 <unknown>
+#19 0x55e4d633cb05 <unknown>
+#20 0x55e4d63899d8 <unknown>
+#21 0x55e4d6389b66 <unknown>
+#22 0x55e4d63a4fb3 <unknown>
+#23 0x7f3a5ee64b43 <unknown>
+
+[2023-02-12 07:21:48] [ERROR   ] discord.client: Attempting a reconnect in 0.31s
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 627, in connect
+    await self.ws.poll_event()
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/gateway.py", line 646, in poll_event
+    raise ConnectionClosed(self.socket, shard_id=self.shard_id, code=code) from None
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
+[2023-02-12 07:21:49] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-12 07:47:13] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-12 10:45:10] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 34, in on_message
+    movie_name = movie_info_scraping.get_name(message.content, GetConf.get_amazon_login_id(), GetConf.get_amazon_login_password())
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 33, in get_name
+    origin_text = driver.find_element(By.CLASS_NAME, "_36RzrH").text
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 830, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 440, in execute
+    self.error_handler.check_response(response)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 245, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"._36RzrH"}
+  (Session info: headless chrome=109.0.5414.119)
+Stacktrace:
+#0 0x559cb4863323 <unknown>
+#1 0x559cb4629707 <unknown>
+#2 0x559cb4666032 <unknown>
+#3 0x559cb4666141 <unknown>
+#4 0x559cb46a0514 <unknown>
+#5 0x559cb468640d <unknown>
+#6 0x559cb469e26c <unknown>
+#7 0x559cb46861b3 <unknown>
+#8 0x559cb46594de <unknown>
+#9 0x559cb465a5fe <unknown>
+#10 0x559cb48b4e7e <unknown>
+#11 0x559cb48b7abe <unknown>
+#12 0x559cb48b82fa <unknown>
+#13 0x559cb489ae60 <unknown>
+#14 0x559cb48b8ae3 <unknown>
+#15 0x559cb488cb05 <unknown>
+#16 0x559cb48d99d8 <unknown>
+#17 0x559cb48d9b66 <unknown>
+#18 0x559cb48f4fb3 <unknown>
+#19 0x7f91341e6b43 <unknown>
+
+[2023-02-12 11:38:15] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 36fb3db61a648b741f152e9c398f3b04.
+[2023-02-12 11:58:01] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 34, in on_message
+    movie_name = movie_info_scraping.get_name(message.content, GetConf.get_amazon_login_id(), GetConf.get_amazon_login_password())
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 29, in get_name
+    driver.get(url)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 449, in get
+    self.execute(Command.GET, {"url": url})
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 440, in execute
+    self.error_handler.check_response(response)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 245, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidArgumentException: Message: invalid argument
+  (Session info: headless chrome=109.0.5414.119)
+Stacktrace:
+#0 0x55793f1d6323 <unknown>
+#1 0x55793ef9c58d <unknown>
+#2 0x55793ef87519 <unknown>
+#3 0x55793ef857ee <unknown>
+#4 0x55793ef85c34 <unknown>
+#5 0x55793ef9e618 <unknown>
+#6 0x55793f0118f5 <unknown>
+#7 0x55793eff93e2 <unknown>
+#8 0x55793f01126c <unknown>
+#9 0x55793eff91b3 <unknown>
+#10 0x55793efcc4de <unknown>
+#11 0x55793efcd5fe <unknown>
+#12 0x55793f227e7e <unknown>
+#13 0x55793f22aabe <unknown>
+#14 0x55793f22b2fa <unknown>
+#15 0x55793f20de60 <unknown>
+#16 0x55793f22bae3 <unknown>
+#17 0x55793f1ffb05 <unknown>
+#18 0x55793f24c9d8 <unknown>
+#19 0x55793f24cb66 <unknown>
+#20 0x55793f267fb3 <unknown>
+#21 0x7f1ef68a8b43 <unknown>
+
+[2023-02-12 12:27:58] [INFO    ] discord.client: logging in using static token
+[2023-02-12 12:27:59] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 982c36ebf179757818d0ac8ae6cb4749).
+[2023-02-12 12:30:06] [WARNING ] discord.gateway: Can't keep up, shard ID None websocket is 38.2s behind.
+[2023-02-12 13:10:00] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-12 14:09:11] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-12 16:31:59] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-12 16:56:07] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-12 17:21:30] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-12 19:33:20] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-12 20:01:06] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-12 22:11:36] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-13 00:30:41] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-13 03:29:23] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.
+[2023-02-13 04:04:44] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 116, in <module>
+    client.run(token = GetConf.get_token())
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 828, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 633, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 600, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1896, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/main.py", line 33, in on_message
+    info = movie_info_scraping.get_info(message.content)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 71, in get_info
+    result = search_title("https://filmarks.com/search/" + genre + "?q=" + title,driver,title)
+  File "/home/yoshiaki/workspace/discord/kitabot/src/movie_info_scraping.py", line 49, in search_title
+    sleep(2)
+
+[2023-02-13 04:04:51] [ERROR   ] discord.client: Attempting a reconnect in 0.50s
+Traceback (most recent call last):
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/client.py", line 627, in connect
+    await self.ws.poll_event()
+  File "/home/yoshiaki/workspace/discord/kitabot/.kitabot/lib/python3.10/site-packages/discord/gateway.py", line 646, in poll_event
+    raise ConnectionClosed(self.socket, shard_id=self.shard_id, code=code) from None
+discord.errors.ConnectionClosed: Shard ID None WebSocket closed with 1000
+[2023-02-13 04:04:56] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session 982c36ebf179757818d0ac8ae6cb4749.

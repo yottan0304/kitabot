@@ -15,7 +15,7 @@ def check_record(api_key, data_base_id, title):
 
     # Check title
     for index in range(len(db['results'])):
-        if title == db['results'][index]['properties']['Name']['title'][0]['text']['content']:
+        if db['results'][index]['properties']['Name']['title'][0]['text']['content'] == title:
             return "Match"
 
     return

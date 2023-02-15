@@ -2,7 +2,6 @@ from pprint import pprint
 import discord
 import os
 import json
-import boto3
 import movie_info_scraping
 import notion
 import re
@@ -29,7 +28,30 @@ async def on_message(message):
     # Record Notion
     if "487572866267873290" == str(message.author.id):
 
-        if re.match(r'[https://amzn.asia]+', message.content):
+        try:
+            # Get info
+            pprint("test1")
+            info = movie_info_scraping.get_info(message.content)
+
+            if None != info:
+                pprint("test2")
+                await message.channel.send(""f'{message.content}を見るんですね！')
+
+                # Check Notion's database
+                if "Match" != notion.check_record(GetConf.get_notion_api_key(), GetConf.get_notion_database_id(), message.content):
+                    
+                    # Send on Notion
+                    pprint("test3")
+                    notion.create_record(GetConf.get_notion_api_key(), GetConf.get_notion_database_id(), info)
+                    await message.channel.send("Notion映画情報記録しました！観たら感想をぜひ書いてください！")
+
+                else:
+                    await message.channel.send("何度か見ている作品ですね")
+
+        except:
+            pprint("normal msessage")
+
+        if "https://amzn.asia" in message.content:
 
             # Get movie name
             movie_name = movie_info_scraping.get_name(message.content, GetConf.get_amazon_login_id(), GetConf.get_amazon_login_password())

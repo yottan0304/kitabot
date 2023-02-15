@@ -8,15 +8,12 @@ certifi==2022.12.7
 chardet==4.0.0
 chromedriver-binary==109.0.5414.25.0
 click==8.0.3
-cloud-init==22.4.2
 colorama==0.4.4
-command-not-found==0.3
 configobj==5.0.6
 constantly==15.1.0
 cryptography==3.4.8
 dbus-python==1.2.18
 distro==1.7.0
-distro-info===1.1build1
 exceptiongroup==1.1.0
 h11==0.14.0
 httplib2==0.20.2

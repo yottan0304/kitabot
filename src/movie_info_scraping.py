@@ -45,17 +45,19 @@ def search_title(url,driver,title):
     titles = driver.find_elements(By.CLASS_NAME, "p-content-cassette__title")
 
     for index in range(len(titles)):
-        if titles[index].text in title:
+        pprint(titles[index].text)
+        pprint(title)
+        if titles[index].text == title:
             sleep(2)
 
             # Movie page
+
             titles[index].click()
             sleep(2)
 
             try: 
                 # !Null Synopsis
                 if driver.find_element(By.CLASS_NAME, "p-content-detail__synopsis-desc").text:
-                    pprint("kitakita")
                     return [driver.current_url, driver.find_element(By.CLASS_NAME, "p-content-detail__synopsis-desc").text]
             except:
                 # Null Synopsis
@@ -69,6 +71,7 @@ def get_info(title):
     genre_list = ["movies","dramas","animes"]
 
     for genre in genre_list:
+        pprint("test serach title")
         result = search_title("https://filmarks.com/search/" + genre + "?q=" + title,driver,title)
         if None != result:
             result.insert(0, genre)
